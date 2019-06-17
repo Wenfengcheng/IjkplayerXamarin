@@ -1,13 +1,12 @@
 ﻿using Foundation;
-using System;
+using Ijkplayer.iOS;
 using UIKit;
-using IJKPlayer;
 
 namespace Sample
 {
     public class PlayerViewController : UIViewController
     {
-        private IJKFFMoviePlayerController iPlayer;
+       private IJKFFMoviePlayerController iPlayer;
 
         public override void ViewDidLoad()
         {
@@ -23,7 +22,7 @@ namespace Sample
             this.iPlayer.ShouldAutoplay = true;
             this.View.AutosizesSubviews = true;
             this.View.AddSubview(this.iPlayer.View);
-            // Perform any additional setup after loading the view, typically from a nib.
+           // Perform any additional setup after loading the view, typically from a nib.
         }
 
         public override void ViewWillAppear(bool animated)
