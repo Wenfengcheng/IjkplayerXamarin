@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,6 +11,19 @@
     <RootNamespace>IJKPlayer.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>IJKPlayer.iOS</AssemblyName>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Ijkplayer.iOS</PackageId>
+    <PackageVersion>0.8.8.11</PackageVersion>
+    <Authors>jacedeng</Authors>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Owners>jacedeng</Owners>
+    <PackageProjectUrl>https://github.com/daddycoding/IjkplayerXamarin</PackageProjectUrl>
+    <PackageReleaseNotes>Ijkplayer的Xamarin iOS绑定库 不是官方发布只是热心人绑定 Ijkplayer</PackageReleaseNotes>
+    <Summary>Xamarin.iOS Binding Library - IJKPlayer</Summary>
+    <PackageTags>Xamarin.iOS,  Xamarin, ffmpeg, video, player, ijkplayer</PackageTags>
+    <Title>IJKPlayer.iOS</Title>
+    <Description>Ijkplayer的Xamarin iOS绑定库 不是官方发布只是热心人绑定 Ijkplayer</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,5 +75,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
 </Project>
